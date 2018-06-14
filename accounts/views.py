@@ -30,6 +30,8 @@ def login(request):
         print("in post")
         login_form = UserLoginForm(request.POST)
         
+        
+        
         if login_form.is_valid():
             print("there!")
             user = authenticate(username = login_form.cleaned_data["username"], password = login_form.cleaned_data["password"])

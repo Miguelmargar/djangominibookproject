@@ -121,3 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+
+#the below is included by me to get photographs or videos loaded.
+#need to install sudo pip3 install pillow
+#in models need to include: image = models.ImageField(upload_to="images")
+#in html to show photo need to do: <img src="{{MEDIA_URL}}{{ book.image }}"/>
+#in urls.py do: from django.views.static import serve and from django.conf import settings   -----   url(r"")
+MEDIA_URL = "/media/"
+MEDIA_ROOT = "media"

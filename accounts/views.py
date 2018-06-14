@@ -27,11 +27,15 @@ def register(request):
     
 def login(request):
     if request.method == "POST":
+        print("in post")
         login_form = UserLoginForm(request.POST)
+        
         if login_form.is_valid():
-            user = authenticate(username = login_form.cleaned_data["userlog"], password = login_form.cleaned_data["passlog"])
+            print("there!")
+            user = authenticate(username = login_form.cleaned_data["username"], password = login_form.cleaned_data["password"])
         
             if user is not None:
+                print("there!")
                 auth.login(request, user)
                 return redirect("/")
             else:

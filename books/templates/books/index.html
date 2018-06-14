@@ -4,7 +4,12 @@
 
 <h1>These are the books in store</h1>
 
+{% for book in books %}
+<p><img src="{{MEDIA_URL}}{{book.image}}"/>
+{{ book.name}} - {{ book.author }}</p>
+{% endfor %}
 
+<a href="{% url 'add_book' %}">Add Book</a>
 
 
 {% endblock content %}
